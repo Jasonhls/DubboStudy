@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo.xsd
+        ">
+
+    <!--spring的扫描-->
+    <context:component-scan base-package="com.cn.service.impl"></context:component-scan>
+
+    <!--1、指定当前服务/应用的名子（同样的服务名子相同，不要和别的服务同名）-->
+    <dubbo:application name="dubbo-service-consumer"></dubbo:application>
+
+    <!--2、指定注册中心的位置-->
+    <!--    <dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>-->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"></dubbo:registry>
+
+    <!--3、声明需要调用的远程服务的接口，生成远程服务代理-->
+    <dubbo:reference interface="com.cn.service.UserService"></dubbo:reference>
+
+</beans>
