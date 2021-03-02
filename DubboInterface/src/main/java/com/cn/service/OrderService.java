@@ -1,5 +1,9 @@
 package com.cn.service;
 
+import com.cn.pojo.UserAddress;
+
+import java.util.List;
+
 public interface OrderService {
-    void initOrder(String userId);
+    List<UserAddress> initOrder(String userId);
 }

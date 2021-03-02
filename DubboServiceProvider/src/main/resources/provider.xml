@@ -22,4 +22,8 @@
 
     <!--服务的实现-->
     <bean id="userServiceImpl" class="com.cn.service.impl.UserServiceImpl"></bean>
+
+    <!--配置连接监控中心-->
+    <dubbo:monitor protocol="register"></dubbo:monitor>
+    <!--    <dubbo:monitor address="127.0.0.1:7070"></dubbo:monitor>-->
 </beans>

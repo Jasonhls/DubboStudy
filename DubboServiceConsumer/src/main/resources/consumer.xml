@@ -22,4 +22,11 @@
     <!--3、声明需要调用的远程服务的接口，生成远程服务代理-->
     <dubbo:reference interface="com.cn.service.UserService"></dubbo:reference>
 
+
+    <!--配置连接监控中心-->
+    <dubbo:monitor protocol="register"></dubbo:monitor>
+    <!--    <dubbo:monitor address="127.0.0.1:7070"></dubbo:monitor>-->
+
+    <!--配置当前消费者的统一规则,check=false表示所有的服务启动时都不检查-->
+    <dubbo:consumer check="false" timeout="1000"></dubbo:consumer>
 </beans>
