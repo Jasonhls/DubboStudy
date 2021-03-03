@@ -21,7 +21,9 @@ public class OrderServiceImpl implements OrderService {
     @Reference//消费服务，用这个注解，dubbo提供的注解
     UserService userService;
 
+    @Override
     public List<UserAddress> initOrder(String userId) {
+        System.out.println("userId：" + userId);
         List<UserAddress> userAddressList = userService.getUserAddressList(userId);
         return userAddressList;
     }
