@@ -3,8 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo.xsd
-        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo.xsd
+        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         ">
 
     <!--1、指定当前服务/应用的名子（同样的服务名子相同，不要和别的服务同名）-->
@@ -28,7 +28,7 @@
     </bean>
 
     <!--配置连接监控中心-->
-    <dubbo:monitor protocol="register"></dubbo:monitor>
+<!--    <dubbo:monitor protocol="register"></dubbo:monitor>-->
     <!--    <dubbo:monitor address="127.0.0.1:7070"></dubbo:monitor>-->
 
     <!--统一设置服务提供方的规则-->

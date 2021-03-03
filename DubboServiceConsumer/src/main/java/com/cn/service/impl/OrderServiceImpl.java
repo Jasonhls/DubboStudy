@@ -19,8 +19,10 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     UserService userService;
 
-    public void initOrder(String userId) {
+    @Override
+    public List<UserAddress> initOrder(String userId) {
         List<UserAddress> userAddressList = userService.getUserAddressList(userId);
         System.out.println(userAddressList);
+        return userAddressList;
     }
 }

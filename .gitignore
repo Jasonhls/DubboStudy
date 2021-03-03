@@ -20,7 +20,7 @@
 *.zip
 *.tar.gz
 *.rar
-/target
+*/target
 .idea/vcs.xml
 .idea
 DubboStudy.iml
