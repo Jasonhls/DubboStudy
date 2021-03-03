@@ -14,6 +14,8 @@
         <module>DubboInterface</module>
         <module>SpringBootDubboServiceProvider</module>
         <module>SpringBootDubboServiceConsumer</module>
+        <module>SpringBootApacheDubboProvider</module>
+        <module>SpringBootApacheDubboConsumer</module>
     </modules>
 
     <parent>

@@ -1,7 +1,7 @@
 package com.cn.controller;
 
 import com.cn.pojo.UserAddress;
-import com.cn.service.OrderService;
+import com.cn.service.boot.alibabadubbo.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
