@@ -19,6 +19,7 @@ public class OrderServiceImpl implements OrderService {
 
 //    @Autowired
     @Reference//消费服务，用这个注解，dubbo提供的注解
+//    @Reference(url = "localhost:20880") //采用dubbo直连方式
     UserService userService;
 
     @Override
