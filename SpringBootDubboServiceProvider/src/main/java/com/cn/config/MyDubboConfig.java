@@ -1,6 +1,10 @@
 package com.cn.config;
 
+import com.alibaba.dubbo.common.URL;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
 import com.alibaba.dubbo.config.*;
+import com.alibaba.dubbo.registry.Registry;
+import com.alibaba.dubbo.registry.RegistryFactory;
 import com.cn.service.boot.alibabadubbo.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +39,12 @@ public class MyDubboConfig {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress("127.0.0.1:2181");
         registryConfig.setProtocol("zookeeper");
+
+        /*RegistryFactory registryFactory = ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
+        Registry registry = registryFactory.getRegistry(URL.valueOf("zookeeper://127.0.0.1:2181"));
+        registry.register(URL.valueOf("override://0.0.0.0/com.cn.service.boot.alibabadubbo.UserService?" +
+                "category=configurators&dynamic=false&application=foo&mock=force:return+null"));*/
+
         return registryConfig;
     }
 
@@ -69,7 +79,7 @@ public class MyDubboConfig {
         MethodConfig methodConfig = new MethodConfig();
         methodConfig.setName("getUserAddressList");
         methodConfig.setTimeout(3000);
-        methodConfig.setRetries(3);
+//        methodConfig.setRetries(3);
         List<MethodConfig> list = new ArrayList<>();
         list.add(methodConfig);
         //将Method的设置关联到service配置中
