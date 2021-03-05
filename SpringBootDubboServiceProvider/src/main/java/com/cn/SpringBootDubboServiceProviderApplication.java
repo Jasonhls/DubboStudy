@@ -22,7 +22,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @EnableDubbo(scanBasePackages = {"com.cn"})//开启基于注解的dubbo功能
 @SpringBootApplication
-//@DubboComponentScan(value = "com.cn")
+//@DubboComponentScan(basePackages = {"com.cn"})
 public class SpringBootDubboServiceProviderApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootDubboServiceProviderApplication.class, args);

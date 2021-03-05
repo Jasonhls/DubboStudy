@@ -1,11 +1,7 @@
 package com.cn.config;
 
 import com.alibaba.dubbo.config.*;
-import com.alibaba.dubbo.registry.Registry;
-import com.alibaba.dubbo.registry.dubbo.DubboRegistry;
-import com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry;
 import com.cn.service.boot.alibabadubbo.UserService;
-import com.cn.service.iml.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,7 +13,7 @@ import java.util.List;
  * @author: helisen
  * @create: 2021-03-05 10:24
  **/
-//@Configuration
+@Configuration
 public class MyDubboConfig {
     /**
      * 对应<dubbo:application name="dubbo-service-provider"></dubbo:application>
@@ -61,11 +57,12 @@ public class MyDubboConfig {
      *
      * <bean id="userServiceImpl01" class="com.cn.service.impl.UserServiceImpl">
      * </bean>
+     * 使用下面这种方式，service的实现类上也需要加@Service注解，因为启动类上用到了包扫描
      */
     @Bean
     public ServiceConfig<UserService> serviceConfig(UserService userService) {
         ServiceConfig<UserService> serviceConfig = new ServiceConfig<>();
-        serviceConfig.setInterface("com.cn.service.UserService");
+        serviceConfig.setInterface(UserService.class);
         serviceConfig.setRef(userService);
         serviceConfig.setVersion("1.0.0");
 
