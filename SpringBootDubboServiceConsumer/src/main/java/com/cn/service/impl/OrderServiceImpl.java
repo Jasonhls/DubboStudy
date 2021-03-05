@@ -17,8 +17,12 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
+    /**
+     * 消费服务，用这个注解，dubbo提供的注解
+     * 配置loadbalance属性，默认值为random，查看源码LoadBalance的实现类，即知道有几种策略，每种策略的name是什么
+     */
 //    @Autowired
-    @Reference//消费服务，用这个注解，dubbo提供的注解
+    @Reference(loadbalance = "roundrobin")
 //    @Reference(url = "localhost:20880") //采用dubbo直连方式
     UserService userService;
 
