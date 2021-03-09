@@ -1,0 +1,3 @@
+dubbo=com.cn.spi.dubboadaptive.DubboAdaptiveExtImpl
+spring=com.cn.spi.dubboadaptive.SpringAdaptiveExtImpl
+springboot=com.cn.spi.dubboadaptive.SpringBootAdaptiveExtImpl
