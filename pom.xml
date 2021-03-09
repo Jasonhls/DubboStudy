@@ -16,6 +16,7 @@
         <module>SpringBootDubboServiceConsumer</module>
         <module>SpringBootApacheDubboProvider</module>
         <module>SpringBootApacheDubboConsumer</module>
+        <module>DubboStudyDemo</module>
     </modules>
 
     <parent>
