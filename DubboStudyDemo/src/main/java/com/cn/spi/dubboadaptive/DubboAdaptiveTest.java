@@ -3,6 +3,8 @@ package com.cn.spi.dubboadaptive;
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.ExtensionLoader;
 import org.apache.dubbo.common.utils.StringUtils;
+import org.apache.dubbo.remoting.Transporter;
+import org.apache.dubbo.rpc.Protocol;
 import org.junit.Test;
 
 public class DubboAdaptiveTest {
@@ -10,7 +12,7 @@ public class DubboAdaptiveTest {
     public void testOne() {
         ExtensionLoader<AdaptiveExt> extExtensionLoader = ExtensionLoader.getExtensionLoader(AdaptiveExt.class);
         AdaptiveExt adaptiveExt = extExtensionLoader.getAdaptiveExtension();
-        URL url = URL.valueOf("test://localhost/test?adaptive.ext=spring");
+        URL url = URL.valueOf("test://localhost/test?adaptiveproxy.ext=spring");
         System.out.println(adaptiveExt.echo("d", url));
     }
 
@@ -44,8 +46,21 @@ public class DubboAdaptiveTest {
         // AdaptiveExt
         System.out.println(type.getSimpleName());
         String splitName = StringUtils.camelToSplitName(type.getSimpleName(), ".");
-        // adaptive.ext
+        // adaptiveproxy.ext
         System.out.println(splitName);
+    }
+
+    @Test
+    public void testFive() {
+        ExtensionLoader<MyAdaptiveExt> adaptiveExtExtensionLoader = ExtensionLoader.getExtensionLoader(MyAdaptiveExt.class);
+        adaptiveExtExtensionLoader.getAdaptiveExtension();
+
+//        ExtensionLoader<Transporter> transporterExtensionLoader = ExtensionLoader.getExtensionLoader(Transporter.class);
+//        transporterExtensionLoader.getAdaptiveExtension();
+//
+//        ExtensionLoader<Protocol> protocolExtensionLoader = ExtensionLoader.getExtensionLoader(Protocol.class);
+//        protocolExtensionLoader.getAdaptiveExtension();
+
     }
 
 }

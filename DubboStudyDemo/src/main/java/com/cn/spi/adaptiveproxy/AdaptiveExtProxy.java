@@ -1,4 +1,4 @@
-package com.cn.spi.adaptive;
+package com.cn.spi.adaptiveproxy;
 
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.ExtensionLoader;
@@ -24,7 +24,7 @@ public class AdaptiveExtProxy implements AdaptiveExt{
         }
 
         //1.从URL中获取 AdaptiveExt 名称
-        String name = url.getParameter("adaptive.ext");
+        String name = url.getParameter("adaptiveproxy.ext");
         if(name == null) {
             throw new IllegalArgumentException("name == null");
         }

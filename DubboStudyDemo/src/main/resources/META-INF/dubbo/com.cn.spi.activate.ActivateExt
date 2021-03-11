@@ -1,0 +1,5 @@
+group=com.cn.spi.activate.GroupActivateExtImpl
+order1=com.cn.spi.activate.OrderActivateExtImpl
+order2=com.cn.spi.activate.OrderActivateExtImplMore
+value=com.cn.spi.activate.ValueActivateExtImpl
+com.cn.spi.activate.DefaultActivateExtImpl

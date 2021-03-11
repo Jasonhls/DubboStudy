@@ -1,4 +1,4 @@
-package com.cn.spi.adaptive;
+package com.cn.spi.adaptiveproxy;
 
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.SPI;
