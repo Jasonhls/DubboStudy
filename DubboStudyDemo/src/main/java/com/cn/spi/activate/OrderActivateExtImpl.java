@@ -12,6 +12,6 @@ public class OrderActivateExtImpl implements ActivateExt{
 
     @Override
     public String echo(String msg) {
-        return null;
+        return msg;
     }
 }
