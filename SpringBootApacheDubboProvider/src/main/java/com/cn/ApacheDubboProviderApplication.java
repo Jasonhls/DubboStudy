@@ -16,17 +16,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * {ConfigurationPropertiesScanRegistrar@3353}  -> {StandardAnnotationMetadata@3326}
  *
  * 解释：
- * @EnableDubbo注解包含了两个子注解@EnableDubboConfig和@DubboComponentScan
- * @EnableDubboConfig注解import了DubboConfigConfigurationRegistrar.class
- * @DubboComponentScan注解import了DubboComponentScanRegistrar.class
+ * 注解@EnableDubbo包含了两个子注解@EnableDubboConfig和@DubboComponentScan
+ * 注解@EnableDubboConfig注解import了  DubboConfigConfigurationRegistrar.class
+ * 注解@DubboComponentScan注解import了  DubboComponentScanRegistrar.class
  *
- * @SpringBootApplication注解包含子注解@EnableAutoConfiguration和@ConfigurationPropertiesScan
+ * 注解@SpringBootApplication注解包含子注解@EnableAutoConfiguration和@ConfigurationPropertiesScan
  *
- * @EnableAutoConfiguration注解import了AutoConfigurationImportSelector.class
+ * 注解@EnableAutoConfiguration  import了  AutoConfigurationImportSelector.class（这个不属于ImportBeanDefinitionRegistrar类型）
+ * 注解@ConfigurationPropertiesScan import了  ConfigurationPropertiesScanRegistrar.class，
  *
- * @ConfigurationPropertiesScan注解import了ConfigurationPropertiesScanRegistrar.class，
- * 而@ConfigurationPropertiesScan注解又包含了子注解@EnableConfigurationProperties，
- * @EnableConfigurationProperties注解import了EnableConfigurationPropertiesRegistrar.class
+ * 而注解@EnableAutoConfiguration又包含了子注解@AutoConfigurationPackage，
+ *     注解@AutoConfigurationPackage import了org.springframework.boot.autoconfigure.AutoConfigurationPackages的内部类Registrar，
+ *     即org.springframework.boot.autoconfigure.AutoConfigurationPackages$Registrar
+ * 而注解@ConfigurationPropertiesScan又包含了子注解@EnableConfigurationProperties，
+ *     注解@EnableConfigurationProperties注解import了  EnableConfigurationPropertiesRegistrar.class
  **/
 @EnableDubbo
 @SpringBootApplication
